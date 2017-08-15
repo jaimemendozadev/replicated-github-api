@@ -1,11 +1,15 @@
+require('dotenv').config();
 var app = require('express')();
+var router = require('./router');
 
 var bodyParser = require('body-parser');
 
 
-app.get('/', (req, res) => {
-  res.send("<h1>Hello you!</h1>");
-});
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.use(router);
 
 
 
