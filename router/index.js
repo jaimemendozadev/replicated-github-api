@@ -1,12 +1,13 @@
 var router = require('express').Router();
-var utils = require('./utils.js');
+var handlers = require('./handlers.js');
 
 router.get('/', (req, res) => {
   res.send('<h1>Welcome to the mini-GitHub API!</h1>');
 });
 
-router.get('/:username', utils.fetchSSHKeys);
-  
+router.get('/fetch/:username', handlers.fetchOneKeyPair);
+
+router.post('/fetch', handlers.fetchKeyPairs);
 
 
 router.post('/test', (req, res) => {
