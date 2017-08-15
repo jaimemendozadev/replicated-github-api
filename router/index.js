@@ -1,16 +1,17 @@
 var router = require('express').Router();
+var utils = require('./utils.js');
 
 router.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>');
+  res.send('<h1>Welcome to the mini-GitHub API!</h1>');
 });
 
-router.get('/api', (req, res) => {
-  res.send('You hit the API!');
-});
+router.get('/:username', utils.fetchSSHKeys);
+  
 
-router.post('/api/test', (req, res) => {
+
+router.post('/test', (req, res) => {
   console.log(`the req.body is ${JSON.stringify(req.body)}`);
-  res.status(200).send('<h1>Good job</h1>');
+  res.status(200).send('<h1>Passed the test</h1>');
 });
 
 module.exports = router;
