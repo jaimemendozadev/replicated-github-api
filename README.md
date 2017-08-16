@@ -40,12 +40,12 @@ Fire up your favorite web browser and go to `http://localhost:3000/api`. You'll 
 
 Our API has only two main routes:
 
-<code>
+```
   router.get('/fetch/:username', callbackFunction);
 
   router.post('/fetch', callbackFunction);
 
-</code>
+```
 
 Using [Postman](https://www.getpostman.com/), a powerful GUI platform that makes API calls for you, we can use our API to talk to the GitHub API to fetch either a single user or multiple users' SSH keys.
 
